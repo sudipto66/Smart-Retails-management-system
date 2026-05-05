@@ -16,12 +16,12 @@
 
 <h2>Reports</h2>
 
-<!-- 📌 Summary -->
+<!-- Summary -->
 <p><strong>Total Revenue:</strong> ৳11500</p>
 <p><strong>Total Orders:</strong> 2</p>
 <p><strong>Low Stock Items:</strong> 1</p>
 
-<!-- ⚠️ Low Stock Table -->
+<!-- Low Stock Table -->
 <h3>Low Stock Products</h3>
 <table border="1">
 <tr>
@@ -36,7 +36,7 @@
 
 </table>
 
-<!-- 📦 Sales Summary -->
+<!-- Sales Summary -->
 <h3>Recent Sales</h3>
 <table border="1">
 <tr>
@@ -59,7 +59,7 @@
 
 </table>
 
-<!-- ⬇️ Download -->
+<!-- Download -->
 <button onclick="window.print()">Download Report</button>
 
 </body>
