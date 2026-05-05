@@ -1,1 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Invoice</title>
+</head>
+<body>
 
+<h2>Smart Retail Invoice</h2>
+
+<p>
+Customer: Sakib Hasan <br>
+Phone: 01755555555 <br>
+Invoice No: 1001 <br>
+Date: 03 May 2026
+</p>
+
+<table border="1" width="100%">
+<tr>
+  <th>Product</th>
+  <th>Qty</th>
+  <th>Price (৳)</th>
+  <th>Total (৳)</th>
+</tr>
+
+<tr>
+  <td>Bluetooth Headphone</td>
+  <td>2</td>
+  <td>3500</td>
+  <td>7000</td>
+</tr>
+
+<tr>
+  <td>Gaming Keyboard</td>
+  <td>1</td>
+  <td>4500</td>
+  <td>4500</td>
+</tr>
+
+</table>
+
+<h3>Total: ৳11500</h3>
+
+<button onclick="window.print()">Print</button>
+
+</body>
+</html>
