@@ -1,1 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Inventory</title>
+</head>
+<body>
+
+<h2>Inventory</h2>
+
+<table border="1">
+<tr>
+  <th>Product</th>
+  <th>Stock</th>
+</tr>
+
+<tr>
+  <td>Headphones</td>
+  <td>45</td>
+</tr>
+
+</table>
+
+</body>
+</html>
+
 
