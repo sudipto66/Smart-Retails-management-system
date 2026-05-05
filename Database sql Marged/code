@@ -1,9 +1,9 @@
- -- Create Database
 CREATE DATABASE smart_retail;
 USE smart_retail;
 
- 
-CREATE TABLE admin (
+
+
+ CREATE TABLE admin (
     admin_id INT PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(50) UNIQUE NOT NULL,
     password VARCHAR(100) NOT NULL,
@@ -14,8 +14,10 @@ INSERT INTO admin (username, password, email) VALUES
 ('admin', '1234', 'admin@smartretail.com'),
 ('rahim_admin', 'abcd', 'rahim@gmail.com');
 
- 
-CREATE TABLE suppliers (
+
+
+
+ CREATE TABLE suppliers (
     supplier_id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
     contact_person VARCHAR(100),
@@ -23,26 +25,30 @@ CREATE TABLE suppliers (
     phone VARCHAR(20)
 );
 
-INSERT INTO suppliers (name, contact_person, email, phone) VALUES
-('Dhaka Electronics Ltd.', 'Md. Rahim', 'rahim@dhakaelectronics.com', '01711111111'),
-('Chattogram Furniture House', 'Karim Uddin', 'karim@furniturebd.com', '01822222222'),
-('Sylhet Home Supplies', 'Jamal Ahmed', 'jamal@sylhetshop.com', '01933333333');
+INSERT INTO suppliers VALUES
+(NULL, 'Dhaka Electronics Ltd.', 'Md. Rahim', 'rahim@dhakaelectronics.com', '01711111111'),
+(NULL, 'Chattogram Furniture House', 'Karim Uddin', 'karim@furniturebd.com', '01822222222'),
+(NULL, 'Sylhet Home Supplies', 'Jamal Ahmed', 'jamal@sylhetshop.com', '01933333333');
 
- 
-CREATE TABLE catalog (
+
+
+
+ CREATE TABLE catalog (
     catalog_id INT PRIMARY KEY AUTO_INCREMENT,
     category_name VARCHAR(50) UNIQUE NOT NULL,
     description TEXT
 );
 
-INSERT INTO catalog (category_name, description) VALUES
-('Electronics', 'Electronic devices'),
-('Furniture', 'Home and office furniture'),
-('Home Goods', 'Daily use items'),
-('Accessories', 'Small accessories');
+INSERT INTO catalog VALUES
+(NULL, 'Electronics', 'Electronic devices'),
+(NULL, 'Furniture', 'Home and office furniture'),
+(NULL, 'Home Goods', 'Daily use items'),
+(NULL, 'Accessories', 'Small accessories');
 
- 
-CREATE TABLE products (
+
+
+
+ CREATE TABLE products (
     product_id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
     sku VARCHAR(50) UNIQUE,
@@ -54,13 +60,15 @@ CREATE TABLE products (
     FOREIGN KEY (supplier_id) REFERENCES suppliers(supplier_id)
 );
 
-INSERT INTO products (name, sku, catalog_id, price, description, supplier_id) VALUES
-('Bluetooth Headphone', 'ELEC-001', 1, 3500.00, 'High quality headphone', 1),
-('Office Chair', 'FURN-102', 2, 12000.00, 'Comfortable chair', 2),
-('Gaming Keyboard', 'ELEC-044', 1, 4500.00, 'RGB keyboard', 1),
-('Steel Bottle', 'HOME-099', 3, 800.00, 'Durable bottle', 3);
+INSERT INTO products VALUES
+(NULL, 'Bluetooth Headphone', 'ELEC-001', 1, 3500.00, 'High quality headphone', 1),
+(NULL, 'Office Chair', 'FURN-102', 2, 12000.00, 'Comfortable chair', 2),
+(NULL, 'Gaming Keyboard', 'ELEC-044', 1, 4500.00, 'RGB keyboard', 1),
+(NULL, 'Steel Bottle', 'HOME-099', 3, 800.00, 'Durable bottle', 3);
 
  
+
+
 CREATE TABLE customers (
     customer_id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
@@ -69,11 +77,13 @@ CREATE TABLE customers (
     loyalty_points INT DEFAULT 0
 );
 
-INSERT INTO customers (name, email, phone, loyalty_points) VALUES
-('Sakib Hasan', 'sakib@gmail.com', '01755555555', 150),
-('Tamim Iqbal', 'tamim@gmail.com', '01866666666', 45);
+INSERT INTO customers VALUES
+(NULL, 'Sakib Hasan', 'sakib@gmail.com', '01755555555', 150),
+(NULL, 'Tamim Iqbal', 'tamim@gmail.com', '01866666666', 45);
 
  
+
+
 CREATE TABLE inventory (
     inventory_id INT PRIMARY KEY AUTO_INCREMENT,
     product_id INT,
@@ -81,13 +91,16 @@ CREATE TABLE inventory (
     FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
 
-INSERT INTO inventory (product_id, stock) VALUES
-(1, 45),
-(2, 5),
-(3, 12),
-(4, 150);
+INSERT INTO inventory VALUES
+(NULL, 1, 45),
+(NULL, 2, 5),
+(NULL, 3, 12),
+(NULL, 4, 150);
 
  
+
+
+
 CREATE TABLE purchases (
     purchase_id INT PRIMARY KEY AUTO_INCREMENT,
     supplier_id INT,
@@ -96,11 +109,14 @@ CREATE TABLE purchases (
     FOREIGN KEY (supplier_id) REFERENCES suppliers(supplier_id)
 );
 
-INSERT INTO purchases (supplier_id, purchase_date, total_amount) VALUES
-(1, '2026-05-01', 150000.00),
-(2, '2026-05-02', 80000.00);
+INSERT INTO purchases VALUES
+(NULL, 1, '2026-05-01', 150000.00),
+(NULL, 2, '2026-05-02', 80000.00);
 
- 
+
+
+
+
 CREATE TABLE purchase_details (
     purchase_detail_id INT PRIMARY KEY AUTO_INCREMENT,
     purchase_id INT,
@@ -111,12 +127,14 @@ CREATE TABLE purchase_details (
     FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
 
-INSERT INTO purchase_details (purchase_id, product_id, quantity, price) VALUES
-(1, 1, 50, 3000.00),
-(1, 3, 30, 4000.00),
-(2, 2, 20, 10000.00);
+INSERT INTO purchase_details VALUES
+(NULL, 1, 1, 50, 3000.00),
+(NULL, 1, 3, 30, 4000.00),
+(NULL, 2, 2, 20, 10000.00);
 
  
+
+
 CREATE TABLE orders (
     order_id INT PRIMARY KEY AUTO_INCREMENT,
     customer_id INT,
@@ -126,10 +144,13 @@ CREATE TABLE orders (
     FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
 );
 
-INSERT INTO orders (customer_id, order_date, total_amount, status) VALUES
-(1, '2026-05-03', 7000.00, 'Completed'),
-(2, '2026-05-03', 4500.00, 'Processing');
+INSERT INTO orders VALUES
+(NULL, 1, '2026-05-03', 7000.00, 'Completed'),
+(NULL, 2, '2026-05-03', 4500.00, 'Processing');
+
  
+
+
 CREATE TABLE order_details (
     order_detail_id INT PRIMARY KEY AUTO_INCREMENT,
     order_id INT,
@@ -140,6 +161,6 @@ CREATE TABLE order_details (
     FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
 
-INSERT INTO order_details (order_id, product_id, quantity, price) VALUES
-(1, 1, 2, 3500.00),
-(2, 3, 1, 4500.00);
+INSERT INTO order_details VALUES
+(NULL, 1, 1, 2, 3500.00),
+(NULL, 2, 3, 1, 4500.00);
