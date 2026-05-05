@@ -1,1 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Customers</title>
+</head>
+<body>
+
+<h2>Customers</h2>
+
+<table border="1">
+<tr>
+  <th>Name</th>
+  <th>Email</th>
+</tr>
+
+<tr>
+  <td>Alice</td>
+  <td>alice@mail.com</td>
+</tr>
+
+</table>
+
+<button>Add Customer</button>
+
+</body>
+</html>
 
