@@ -1,1 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Products</title>
+  <style>
+    body {
+      font-family: Arial;
+      margin: 20px;
+    }
+
+    input {
+      padding: 8px;
+      width: 250px;
+      margin-bottom: 10px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 80%;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    button {
+      padding: 8px 12px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    .form-box {
+      margin-top: 20px;
+      border: 1px solid #ccc;
+      padding: 15px;
+      width: 300px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h2>Product Management</h2>
+
+<!-- 🔍 Search -->
+<input type="text" id="search" placeholder="Search product..." onkeyup="searchProduct()">
+
+<!-- 📦 Product Table -->
+<table border="1" id="productTable">
+<tr>
+  <th>SKU</th>
+  <th>Name</th>
+  <th>Category</th>
+  <th>Price</th>
+</tr>
+
+<tr>
+  <td>ELEC-001</td>
+  <td>Bluetooth Headphone</td>
+  <td>Electronics</td>
+  <td>৳3500</td>
+</tr>
+
+<tr>
+  <td>FURN-102</td>
+  <td>Office Chair</td>
+  <td>Furniture</td>
+  <td>৳12000</td>
+</tr>
+
+</table>
+
+<!-- ➕ Add Product Form -->
+<div class="form-box">
+  <h3>Add Product</h3>
+
+  <input type="text" id="sku" placeholder="SKU"><br><br>
+  <input type="text" id="name" placeholder="Product Name"><br><br>
+  <input type="text" id="category" placeholder="Category"><br><br>
+  <input type="number" id="price" placeholder="Price"><br><br>
+
+  <button onclick="addProduct()">Add Product</button>
+</div>
 
