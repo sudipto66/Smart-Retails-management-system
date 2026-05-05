@@ -1,1 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Suppliers</title>
+</head>
+<body>
 
+<h2>Suppliers</h2>
+
+<table border="1">
+<tr>
+  <th>Name</th>
+  <th>Contact</th>
+</tr>
+
+<tr>
+  <td>TechCorp</td>
+  <td>John Doe</td>
+</tr>
+
+</table>
+
+<button>Add Supplier</button>
+
+</body>
+</html>
