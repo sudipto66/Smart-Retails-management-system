@@ -1,0 +1,8 @@
+<h3>Purchase Entry</h3>
+
+<form>
+  Supplier: <input type="text"><br>
+  Product: <input type="text"><br>
+  Quantity: <input type="number"><br>
+  <button>Add Purchase</button>
+</form>
