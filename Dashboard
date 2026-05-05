@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Smart Retail Dashboard</h1>
+
+<nav>
+  <a href="products.html">Products</a>
+  <a href="inventory.html">Inventory</a>
+  <a href="suppliers.html">Suppliers</a>
+  <a href="customers.html">Customers</a>
+  <a href="sales.html">Sales</a>
+  <a href="reports.html">Reports</a>
+</nav>
+
+<h3>Overview</h3>
+<p>Total Products: 4</p>
+<p>Total Orders: 2</p>
+<p>Revenue: $288</p>
+
+</body>
+</html>
