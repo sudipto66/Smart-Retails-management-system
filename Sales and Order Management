@@ -1,1 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sales</title>
+</head>
+<body>
+
+<h2>Sales</h2>
+
+<table border="1">
+<tr>
+  <th>Order ID</th>
+  <th>Total</th>
+</tr>
+
+<tr>
+  <td>1001</td>
+  <td>$199</td>
+</tr>
+
+</table>
+
+<button>Add Order</button>
+
+</body>
+</html>
 
