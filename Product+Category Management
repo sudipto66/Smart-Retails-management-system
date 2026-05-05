@@ -47,10 +47,10 @@
 
 <h2>Product Management</h2>
 
-<!-- 🔍 Search -->
+<!--  Search -->
 <input type="text" id="search" placeholder="Search product..." onkeyup="searchProduct()">
 
-<!-- 📦 Product Table -->
+<!--  Product Table -->
 <table border="1" id="productTable">
 <tr>
   <th>SKU</th>
@@ -75,7 +75,7 @@
 
 </table>
 
-<!-- ➕ Add Product Form -->
+<!--  Add Product Form -->
 <div class="form-box">
   <h3>Add Product</h3>
 
