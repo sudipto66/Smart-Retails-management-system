@@ -1,1 +1,0 @@
-# Smart-Retails-management-system
