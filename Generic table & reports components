@@ -1,0 +1,45 @@
+const GenericTableView = ({ title, columns, data, icon: Icon, type, onAdd, onDelete }) => (
+  <div className="space-y-6 animate-fade-in">
+
+    {/* Generic Table */}
+
+  </div>
+);
+
+const ReportsView = ({ products, orders, lowStockItems, onDownloadToast, totalRevenue }) => {
+  const [selectedProduct, setSelectedProduct] = useState('');
+  const [isGenerating, setIsGenerating] = useState(false);
+  const [aiReport, setAiReport] = useState('');
+
+  const selectedProductData = products.find(p => p.id === Number(selectedProduct));
+
+  const handleGenerateInsights = async () => {
+    setIsGenerating(true);
+
+    try {
+      const prompt = `
+      You are an expert retail business analyst.
+      Analyze metrics and provide summary.
+      `;
+
+      const response = await callGeminiWithBackoff(prompt);
+      setAiReport(response);
+
+      onDownloadToast("✨ AI Insights generated successfully!");
+    } catch (error) {
+      onDownloadToast("Error generating insights.", "error");
+    } finally {
+      setIsGenerating(false);
+    }
+  };
+
+  return (
+    <div className="space-y-8 animate-fade-in">
+
+      {/* Reports UI */}
+
+    </div>
+  );
+}
+p.id
+p.id
