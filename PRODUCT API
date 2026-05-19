@@ -1,1 +1,71 @@
+<?php
+include 'db.php';
 
+$method = $_SERVER['REQUEST_METHOD'];
+
+switch($method){
+
+    // GET PRODUCTS
+    case 'GET':
+
+        $sql = "SELECT * FROM products";
+        $result = $conn->query($sql);
+
+        $products = [];
+
+        while($row = $result->fetch_assoc()){
+            $products[] = $row;
+        }
+
+        echo json_encode($products);
+
+    break;
+
+    // ADD PRODUCT
+    case 'POST':
+
+        $data = json_decode(file_get_contents("php://input"));
+
+        $name = $data->name;
+        $sku = $data->sku;
+        $category = $data->category;
+        $description = $data->description;
+        $price = $data->price;
+        $stock = $data->stock;
+        $supplier_id = $data->supplier_id;
+
+        $sql = "INSERT INTO products
+        (name, sku, category, description, price, stock, supplier_id)
+        VALUES
+        ('$name','$sku','$category','$description','$price','$stock','$supplier_id')";
+
+        if($conn->query($sql)){
+            echo json_encode([
+                "success" => true,
+                "message" => "Product added"
+            ]);
+        }else{
+            echo json_encode([
+                "success" => false
+            ]);
+        }
+
+    break;
+
+    // DELETE PRODUCT
+    case 'DELETE':
+
+        $id = $_GET['id'];
+
+        $sql = "DELETE FROM products WHERE id=$id";
+
+        if($conn->query($sql)){
+            echo json_encode([
+                "success" => true,
+                "message" => "Product deleted"
+            ]);
+        }
+
+    break;
+}
+?>
