@@ -299,7 +299,7 @@ Example:
 | # | Name | ID | Role | Contribution |
 |---|------|------|------|--------------|
 | 1 | Sudipto Saha | 2023200000197 | Team Leader,Frontend Developer | Team coordination and project management, Admin Login & User Management module, Final integration of all modules |
-| 2 | Rubayet Islam Asif | 2023200000759 | Backend Developer, Backend Developer | Product Management module, Category Management module, Product search and interface design |
+| 2 | Rubayet Islam Asif | 2023200000759 |  Backend Developer | Product Management module, Category Management module, Product search and interface design |
 | 3 | Sanjana Jannat | 2023200000027 | SQL Manager, Backend Developer | Inventory Management module, Supplier Management module, Purchase entry system |
 | 4 | Md Nahid Nur | 2023200000102 | Backend Developer | Customer Management module, Sales & Order Management module, |
 | 5 | Md. Yasin Arafat | 2023000000151 | Tester & Report Manager | Report Generation module, Invoice generation system ,Testing and debugging |
