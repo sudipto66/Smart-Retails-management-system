@@ -3,7 +3,7 @@
 ![PHP](https://img.shields.io/badge/PHP-Backend-blue)
 ![MySQL](https://img.shields.io/badge/MySQL-Database-orange)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-Frontend-purple)
-![Status](https://img.shields.io/badge/Project-Complete:95%-success)
+![Status](https://img.shields.io/badge/Project-OnGoing-success)
 
 A complete web-based retail shop management system designed to manage products, sales, inventory, customers, suppliers, and billing efficiently.
 
