@@ -1,0 +1,21 @@
+Inside React:
+
+fetch("http://localhost/smart-retail-api/products.php")
+  .then(res => res.json())
+  .then(data => {
+      setProducts(data);
+  });
+
+Add Product:
+
+fetch("http://localhost/smart-retail-api/products.php",{
+    method:"POST",
+    headers:{
+        "Content-Type":"application/json"
+    },
+    body:JSON.stringify(productData)
+})
+.then(res=>res.json())
+.then(data=>{
+    console.log(data);
+});
