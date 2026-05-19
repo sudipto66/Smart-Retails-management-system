@@ -1,0 +1,87 @@
+<?php
+
+include 'db.php';
+
+$method = $_SERVER['REQUEST_METHOD'];
+
+switch($method){
+
+    // GET PRODUCTS
+    case 'GET':
+
+        $result = $conn->query("SELECT * FROM products");
+
+        $products = [];
+
+        while($row = $result->fetch_assoc()){
+            $products[] = $row;
+        }
+
+        echo json_encode($products);
+
+    break;
+
+
+    // ADD PRODUCT
+    case 'POST':
+
+        $data = json_decode(file_get_contents("php://input"));
+
+        $sql = "INSERT INTO products
+        (name, sku, category, price, stock)
+        VALUES
+        (
+            '$data->name',
+            '$data->sku',
+            '$data->category',
+            '$data->price',
+            '$data->stock'
+        )";
+
+        $conn->query($sql);
+
+        echo json_encode([
+            "success" => true
+        ]);
+
+    break;
+
+
+    // UPDATE PRODUCT
+    case 'PUT':
+
+        $data = json_decode(file_get_contents("php://input"));
+
+        $sql = "UPDATE products SET
+            name='$data->name',
+            sku='$data->sku',
+            category='$data->category',
+            price='$data->price',
+            stock='$data->stock'
+            WHERE id='$data->id'
+        ";
+
+        $conn->query($sql);
+
+        echo json_encode([
+            "success" => true
+        ]);
+
+    break;
+
+
+    // DELETE PRODUCT
+    case 'DELETE':
+
+        $id = $_GET['id'];
+
+        $conn->query("DELETE FROM products WHERE id='$id'");
+
+        echo json_encode([
+            "success" => true
+        ]);
+
+    break;
+}
+
+?>
