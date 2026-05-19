@@ -1,1 +1,43 @@
+<?php
+include 'db.php';
+
+$method = $_SERVER['REQUEST_METHOD'];
+
+switch($method){
+
+    case 'GET':
+
+        $sql = "SELECT * FROM customers";
+        $result = $conn->query($sql);
+
+        $customers = [];
+
+        while($row = $result->fetch_assoc()){
+            $customers[] = $row;
+        }
+
+        echo json_encode($customers);
+
+    break;
+
+    case 'POST':
+
+        $data = json_decode(file_get_contents("php://input"));
+
+        $name = $data->name;
+        $email = $data->email;
+        $phone = $data->phone;
+
+        $sql = "INSERT INTO customers(name,email,phone)
+        VALUES('$name','$email','$phone')";
+
+        if($conn->query($sql)){
+            echo json_encode([
+                "success" => true
+            ]);
+        }
+
+    break;
+}
+?>
 
