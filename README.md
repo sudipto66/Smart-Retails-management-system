@@ -1,4 +1,5 @@
 Smart Retail Management System
+
 A simple Smart Retail Management System built using HTML, SQL, and React Components.
 This project includes features like invoice generation, sales reports, inventory tracking, and AI-powered business insights.
 
