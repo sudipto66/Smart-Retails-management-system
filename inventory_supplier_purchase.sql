@@ -36,6 +36,7 @@ CREATE TABLE purchases (
     purchase_date DATE,
     total_amount DECIMAL(10,2),
     FOREIGN KEY (supplier_id) REFERENCES suppliers(supplier_id)
+    ON DELETE SET NULL
 );
 
 INSERT INTO purchases (supplier_id, purchase_date, total_amount) VALUES
