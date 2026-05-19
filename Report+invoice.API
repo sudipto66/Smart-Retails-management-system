@@ -1,1 +1,37 @@
+<?php
 
+include 'db.php';
+
+$totalProducts = $conn->query("SELECT COUNT(*) as total FROM products")
+->fetch_assoc()['total'];
+
+$totalOrders = $conn->query("SELECT COUNT(*) as total FROM orders")
+->fetch_assoc()['total'];
+
+$totalRevenue = $conn->query("SELECT SUM(total) as revenue FROM orders")
+->fetch_assoc()['revenue'];
+
+echo json_encode([
+    "totalProducts" => $totalProducts,
+    "totalOrders" => $totalOrders,
+    "totalRevenue" => $totalRevenue
+]);
+
+?>
+
+
+<?php
+
+include 'db.php';
+
+$orderId = $_GET['id'];
+
+$sql = "SELECT * FROM orders WHERE id='$orderId'";
+
+$result = $conn->query($sql);
+
+$invoice = $result->fetch_assoc();
+
+echo json_encode($invoice);
+
+?>
